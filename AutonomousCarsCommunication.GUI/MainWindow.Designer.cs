@@ -45,10 +45,18 @@
             this.labelMyCarManufacturer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonSelectClosestCar = new System.Windows.Forms.Button();
+            this.labelDistanceFromSelectedCarToMyCar = new System.Windows.Forms.Label();
+            this.buttonSendMessage = new System.Windows.Forms.Button();
+            this.textBoxMessage = new System.Windows.Forms.TextBox();
+            this.buttonSetMyCarSpeed = new System.Windows.Forms.Button();
+            this.numericUpDownMyCarSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelSelectedCar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedCar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMyCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMyCarSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAllCars
@@ -63,6 +71,7 @@
             // 
             this.panelSelectedCar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelSelectedCar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSelectedCar.Controls.Add(this.labelDistanceFromSelectedCarToMyCar);
             this.panelSelectedCar.Controls.Add(this.labelSelectedCarPosition);
             this.panelSelectedCar.Controls.Add(this.labelSelectedCarSpeed);
             this.panelSelectedCar.Controls.Add(this.labelSelectedCarModel);
@@ -71,14 +80,14 @@
             this.panelSelectedCar.Controls.Add(this.label2);
             this.panelSelectedCar.Location = new System.Drawing.Point(321, 12);
             this.panelSelectedCar.Name = "panelSelectedCar";
-            this.panelSelectedCar.Size = new System.Drawing.Size(467, 657);
+            this.panelSelectedCar.Size = new System.Drawing.Size(467, 544);
             this.panelSelectedCar.TabIndex = 1;
             // 
             // labelSelectedCarPosition
             // 
             this.labelSelectedCarPosition.AutoSize = true;
             this.labelSelectedCarPosition.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSelectedCarPosition.Location = new System.Drawing.Point(229, 211);
+            this.labelSelectedCarPosition.Location = new System.Drawing.Point(229, 177);
             this.labelSelectedCarPosition.Name = "labelSelectedCarPosition";
             this.labelSelectedCarPosition.Size = new System.Drawing.Size(89, 19);
             this.labelSelectedCarPosition.TabIndex = 9;
@@ -88,7 +97,7 @@
             // 
             this.labelSelectedCarSpeed.AutoSize = true;
             this.labelSelectedCarSpeed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSelectedCarSpeed.Location = new System.Drawing.Point(229, 178);
+            this.labelSelectedCarSpeed.Location = new System.Drawing.Point(229, 144);
             this.labelSelectedCarSpeed.Name = "labelSelectedCarSpeed";
             this.labelSelectedCarSpeed.Size = new System.Drawing.Size(92, 19);
             this.labelSelectedCarSpeed.TabIndex = 8;
@@ -146,14 +155,14 @@
             this.panel1.Controls.Add(this.labelMyCarManufacturer);
             this.panel1.Location = new System.Drawing.Point(794, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 657);
+            this.panel1.Size = new System.Drawing.Size(467, 544);
             this.panel1.TabIndex = 2;
             // 
             // labelMyCarPosition
             // 
             this.labelMyCarPosition.AutoSize = true;
             this.labelMyCarPosition.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMyCarPosition.Location = new System.Drawing.Point(237, 211);
+            this.labelMyCarPosition.Location = new System.Drawing.Point(237, 177);
             this.labelMyCarPosition.Name = "labelMyCarPosition";
             this.labelMyCarPosition.Size = new System.Drawing.Size(89, 19);
             this.labelMyCarPosition.TabIndex = 14;
@@ -173,7 +182,7 @@
             // 
             this.labelMyCarSpeed.AutoSize = true;
             this.labelMyCarSpeed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMyCarSpeed.Location = new System.Drawing.Point(237, 178);
+            this.labelMyCarSpeed.Location = new System.Drawing.Point(237, 144);
             this.labelMyCarSpeed.Name = "labelMyCarSpeed";
             this.labelMyCarSpeed.Size = new System.Drawing.Size(92, 19);
             this.labelMyCarSpeed.TabIndex = 13;
@@ -229,6 +238,81 @@
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
+            // buttonSelectClosestCar
+            // 
+            this.buttonSelectClosestCar.Location = new System.Drawing.Point(335, 562);
+            this.buttonSelectClosestCar.Name = "buttonSelectClosestCar";
+            this.buttonSelectClosestCar.Size = new System.Drawing.Size(112, 23);
+            this.buttonSelectClosestCar.TabIndex = 5;
+            this.buttonSelectClosestCar.Text = "Select closest car";
+            this.buttonSelectClosestCar.UseVisualStyleBackColor = true;
+            this.buttonSelectClosestCar.Click += new System.EventHandler(this.buttonSelectClosestCar_Click);
+            // 
+            // labelDistanceFromSelectedCarToMyCar
+            // 
+            this.labelDistanceFromSelectedCarToMyCar.AutoSize = true;
+            this.labelDistanceFromSelectedCarToMyCar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDistanceFromSelectedCarToMyCar.Location = new System.Drawing.Point(229, 223);
+            this.labelDistanceFromSelectedCarToMyCar.Name = "labelDistanceFromSelectedCarToMyCar";
+            this.labelDistanceFromSelectedCarToMyCar.Size = new System.Drawing.Size(138, 19);
+            this.labelDistanceFromSelectedCarToMyCar.TabIndex = 10;
+            this.labelDistanceFromSelectedCarToMyCar.Text = "Distance from my car";
+            // 
+            // buttonSendMessage
+            // 
+            this.buttonSendMessage.Location = new System.Drawing.Point(335, 646);
+            this.buttonSendMessage.Name = "buttonSendMessage";
+            this.buttonSendMessage.Size = new System.Drawing.Size(112, 23);
+            this.buttonSendMessage.TabIndex = 6;
+            this.buttonSendMessage.Text = "Send message";
+            this.buttonSendMessage.UseVisualStyleBackColor = true;
+            this.buttonSendMessage.Click += new System.EventHandler(this.buttonSendMessage_Click);
+            // 
+            // textBoxMessage
+            // 
+            this.textBoxMessage.Location = new System.Drawing.Point(335, 617);
+            this.textBoxMessage.Name = "textBoxMessage";
+            this.textBoxMessage.Size = new System.Drawing.Size(440, 23);
+            this.textBoxMessage.TabIndex = 7;
+            // 
+            // buttonSetMyCarSpeed
+            // 
+            this.buttonSetMyCarSpeed.Location = new System.Drawing.Point(952, 562);
+            this.buttonSetMyCarSpeed.Name = "buttonSetMyCarSpeed";
+            this.buttonSetMyCarSpeed.Size = new System.Drawing.Size(74, 23);
+            this.buttonSetMyCarSpeed.TabIndex = 8;
+            this.buttonSetMyCarSpeed.Text = "Set speed";
+            this.buttonSetMyCarSpeed.UseVisualStyleBackColor = true;
+            this.buttonSetMyCarSpeed.Click += new System.EventHandler(this.buttonSetMyCarSpeed_Click);
+            // 
+            // numericUpDownMyCarSpeed
+            // 
+            this.numericUpDownMyCarSpeed.DecimalPlaces = 2;
+            this.numericUpDownMyCarSpeed.Location = new System.Drawing.Point(816, 562);
+            this.numericUpDownMyCarSpeed.Maximum = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            this.numericUpDownMyCarSpeed.Minimum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDownMyCarSpeed.Name = "numericUpDownMyCarSpeed";
+            this.numericUpDownMyCarSpeed.Size = new System.Drawing.Size(85, 23);
+            this.numericUpDownMyCarSpeed.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(907, 566);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 19);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "km/h";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -236,6 +320,12 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numericUpDownMyCarSpeed);
+            this.Controls.Add(this.buttonSetMyCarSpeed);
+            this.Controls.Add(this.textBoxMessage);
+            this.Controls.Add(this.buttonSendMessage);
+            this.Controls.Add(this.buttonSelectClosestCar);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -249,6 +339,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMyCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMyCarSpeed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,5 +364,12 @@
         private PictureBox pictureBoxMyCar;
         private Label labelMyCarModel;
         private Label labelMyCarManufacturer;
+        private Button buttonSelectClosestCar;
+        private Label labelDistanceFromSelectedCarToMyCar;
+        private Button buttonSendMessage;
+        private TextBox textBoxMessage;
+        private Button buttonSetMyCarSpeed;
+        private NumericUpDown numericUpDownMyCarSpeed;
+        private Label label4;
     }
 }
