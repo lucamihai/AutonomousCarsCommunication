@@ -52,10 +52,6 @@ namespace AutonomousCarsCommunication.BusinessLogic.UnitTests
         [TestMethod]
         public void TestThatGetClosestCarMakesExpectedCalls()
         {
-            var anotherCar = MockDomainEntities.Car2;
-            anotherCar.Id++;
-            allCars.Add(anotherCar);
-
             carInteractionBusinessLogic.GetClosestCar();
 
             var allCarsExceptCurrentUserCar = allCars.Where(x => x.Id != currentUserCar.Id).ToList();
@@ -71,9 +67,6 @@ namespace AutonomousCarsCommunication.BusinessLogic.UnitTests
         [TestMethod]
         public void TestThatGetClosestCarReturnsExpectedCar()
         {
-            var anotherCar = MockDomainEntities.Car2;
-            anotherCar.Id++;
-            allCars.Add(anotherCar);
             locationServiceMock
                 .SetupSequence(x => x.GetDistanceBetweenCars(currentUserCar, It.IsAny<Car>()))
                 .Returns(50)

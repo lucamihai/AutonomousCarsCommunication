@@ -11,7 +11,8 @@ namespace AutonomousCarsCommunication.Tests.Common
             return new List<Car>
             {
                 Car1,
-                Car2
+                Car2,
+                Car3
             };
         }
 
@@ -31,6 +32,15 @@ namespace AutonomousCarsCommunication.Tests.Common
             Model = MockValues.CarModel2,
             Position = new Position { X = MockValues.CarPositionX2, Y = MockValues.CarPositionY2 },
             SpeedInKmH = MockValues.CarSpeedInKmH2
+        };
+
+        public static Car Car3 => new Car
+        {
+            Id = MockValues.CarId3,
+            ManufacturerId = MockValues.CarManufacturerId3,
+            Model = MockValues.CarModel3,
+            Position = new Position { X = MockValues.CarPositionX3, Y = MockValues.CarPositionY3 },
+            SpeedInKmH = MockValues.CarSpeedInKmH3
         };
     }
 }
