@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using AutonomousCarsCommunication.BusinessLogic.Contracts;
 using AutonomousCarsCommunication.DI;
 using AutonomousCarsCommunication.Domain.Entities;
@@ -85,6 +86,9 @@ namespace AutonomousCarsCommunication.GUI
             labelDistanceFromSelectedCarToMyCar.Text = selectedCar.Id == currentUserCar.Id
                 ? "Distance: N/A"
                 : $"Distance: {locationService.GetDistanceBetweenCars(selectedCar, currentUserCar)}";
+
+            var carEvents = carInteractionBusinessLogic.GetCarEvents(selectedCar);
+            textBoxSelectedCarEvents.Text = GetEventsString(carEvents);
         }
 
         private void UpdateAreaMyCar()
@@ -103,6 +107,9 @@ namespace AutonomousCarsCommunication.GUI
             }
 
             numericUpDownMyCarSpeed.Value = (decimal)currentUserCar.SpeedInKmH;
+
+            var carEvents = carInteractionBusinessLogic.GetCarEvents(currentUserCar);
+            textBoxMyCarEvents.Text = GetEventsString(carEvents);
         }
 
         private void OnCarPreviewUserControlClick(Car car)
@@ -128,6 +135,19 @@ namespace AutonomousCarsCommunication.GUI
             carInteractionBusinessLogic.SetCurrentSpeed(speed);
 
             RefreshDisplayData();
+        }
+
+        private string GetEventsString(List<Event> events)
+        {
+            var stringBuilder = new StringBuilder();
+            for (var index = 0; index < events.Count; index++)
+            {
+                var carEvent = events[index];
+                stringBuilder.AppendLine($"Event {index + 1}: {carEvent.Details}");
+                stringBuilder.AppendLine();
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }

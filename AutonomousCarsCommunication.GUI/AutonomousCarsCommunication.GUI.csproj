@@ -21,6 +21,15 @@
     <None Update="CarImages\BMW-Pan.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="CarImages\Dacia-1310.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CarImages\Dacia-SanderoStepway.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CarImages\Tesla-ModelS.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="CarImages\VW-Polo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
