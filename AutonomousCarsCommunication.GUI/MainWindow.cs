@@ -41,7 +41,7 @@ namespace AutonomousCarsCommunication.GUI
             for (var index = 0; index < allCars.Count; index++)
             {
                 var car = allCars[index];
-                var carPreviewUserControl = new CarPreviewUserControl(car);
+                var carPreviewUserControl = new CarPreviewUserControl(car, OnCarPreviewUserControlClick);
                 carPreviewUserControl.Location = new Point(0, carPreviewUserControl.Size.Height * index);
                 panelAllCars.Controls.Add(carPreviewUserControl);
             }
@@ -57,7 +57,7 @@ namespace AutonomousCarsCommunication.GUI
             var imageFilePath = $"CarImages\\{selectedCar.ImagePath}";
             if (File.Exists(imageFilePath))
             {
-                pictureBoxMyCar.BackgroundImage = Image.FromFile(imageFilePath);
+                pictureBoxSelectedCar.BackgroundImage = Image.FromFile(imageFilePath);
             }
         }
 
@@ -75,6 +75,12 @@ namespace AutonomousCarsCommunication.GUI
             {
                 pictureBoxMyCar.BackgroundImage = Image.FromFile(imageFilePath);
             }
+        }
+
+        private void OnCarPreviewUserControlClick(Car car)
+        {
+            selectedCar = car;
+            UpdateAreaSelectedCar();
         }
     }
 }

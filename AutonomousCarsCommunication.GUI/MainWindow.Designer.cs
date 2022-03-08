@@ -116,6 +116,7 @@
             // 
             // pictureBoxSelectedCar
             // 
+            this.pictureBoxSelectedCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSelectedCar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSelectedCar.Location = new System.Drawing.Point(13, 53);
             this.pictureBoxSelectedCar.Name = "pictureBoxSelectedCar";
