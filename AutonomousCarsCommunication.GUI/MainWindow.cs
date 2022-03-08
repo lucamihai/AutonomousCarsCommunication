@@ -27,8 +27,7 @@ namespace AutonomousCarsCommunication.GUI
             carInteractionBusinessLogic = serviceProvider.GetRequiredService<ICarInteractionBusinessLogic>();
             locationService = serviceProvider.GetRequiredService<ILocationService>();
 
-            RefreshCarCollection();
-            UpdateAreaMyCar();
+            RefreshDisplayData();
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
@@ -62,7 +61,11 @@ namespace AutonomousCarsCommunication.GUI
                 var selectedCarExists = carsById.TryGetValue(selectedCar.Id, out var newSelectedCar);
                 selectedCar = (selectedCarExists
                     ? newSelectedCar
-                    : null)!;
+                    : cars.Skip(1).First())!;
+            }
+            else
+            {
+                selectedCar = cars.Skip(1).First();
             }
         }
 
@@ -80,8 +83,8 @@ namespace AutonomousCarsCommunication.GUI
             }
 
             labelDistanceFromSelectedCarToMyCar.Text = selectedCar.Id == currentUserCar.Id
-                ? "N/A"
-                : locationService.GetDistanceBetweenCars(selectedCar, currentUserCar).ToString();
+                ? "Distance: N/A"
+                : $"Distance: {locationService.GetDistanceBetweenCars(selectedCar, currentUserCar)}";
         }
 
         private void UpdateAreaMyCar()
@@ -98,6 +101,8 @@ namespace AutonomousCarsCommunication.GUI
             {
                 pictureBoxMyCar.BackgroundImage = Image.FromFile(imageFilePath);
             }
+
+            numericUpDownMyCarSpeed.Value = (decimal)currentUserCar.SpeedInKmH;
         }
 
         private void OnCarPreviewUserControlClick(Car car)
