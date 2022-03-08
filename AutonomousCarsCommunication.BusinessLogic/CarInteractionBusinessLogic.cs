@@ -52,7 +52,14 @@ namespace AutonomousCarsCommunication.BusinessLogic
 
         public void SendMessageToCar(Car car, string message)
         {
-            throw new NotImplementedException();
+            var currentUserCar = authorizationService.GetCurrentUserCar();
+            var evnt = new Event
+            {
+                Details = $"Car {currentUserCar.Id} sent the following message to car {car.Id}: {message}",
+                InvolvedCars = new List<int> { currentUserCar.Id, car.Id }
+            };
+
+            eventRepository.Add(evnt);
         }
 
         public void SetCurrentSpeed(float kmH)

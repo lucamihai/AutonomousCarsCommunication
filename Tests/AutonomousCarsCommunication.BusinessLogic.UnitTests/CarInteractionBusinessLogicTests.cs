@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -88,6 +89,23 @@ namespace AutonomousCarsCommunication.BusinessLogic.UnitTests
 
             authorizationServiceMock.Verify(x => x.GetCurrentUserCar(), Times.Once);
             locationServiceMock.Verify(x => x.GetDistanceBetweenCars(currentUserCar, car), Times.Once);
+        }
+
+        [TestMethod]
+        public void TestThatSendMessageToCarMakesExpectedCalls()
+        {
+            var car = MockDomainEntities.Car3;
+            const string message = "Hello there";
+
+            carInteractionBusinessLogic.SendMessageToCar(car, message);
+
+            Func<Event, bool> isExpectedEvent = evnt =>
+                evnt.Details.Contains(message)
+                && evnt.InvolvedCars.Count == 2
+                && evnt.InvolvedCars[0] == currentUserCar.Id
+                && evnt.InvolvedCars[1] == car.Id;
+            authorizationServiceMock.Verify(x => x.GetCurrentUserCar(), Times.Once);
+            eventRepositoryMock.Verify(x => x.Add(It.Is<Event>(e => isExpectedEvent(e))));
         }
 
         [TestMethod]
