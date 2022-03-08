@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.Repositories.UnitTests", "Tests\AutonomousCarsCommunication.Repositories.UnitTests\AutonomousCarsCommunication.Repositories.UnitTests.csproj", "{945C64DD-F264-4789-8580-B2888BF14D8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.Tests.Common", "Tests\AutonomousCarsCommunication.Tests.Common\AutonomousCarsCommunication.Tests.Common.csproj", "{8DDEFD44-13C7-4734-8B6C-6724234C9664}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{945C64DD-F264-4789-8580-B2888BF14D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945C64DD-F264-4789-8580-B2888BF14D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{945C64DD-F264-4789-8580-B2888BF14D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DDEFD44-13C7-4734-8B6C-6724234C9664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DDEFD44-13C7-4734-8B6C-6724234C9664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DDEFD44-13C7-4734-8B6C-6724234C9664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DDEFD44-13C7-4734-8B6C-6724234C9664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{367F50AD-2992-4DF9-BD46-7BD18F6608A3} = {8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}
 		{945C64DD-F264-4789-8580-B2888BF14D8C} = {8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}
+		{8DDEFD44-13C7-4734-8B6C-6724234C9664} = {8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F2181B7-D3DD-454E-8536-741E4942EDE4}

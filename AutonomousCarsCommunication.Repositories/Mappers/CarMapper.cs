@@ -5,14 +5,38 @@ namespace AutonomousCarsCommunication.Repositories.Mappers
 {
     public class CarMapper : ICarMapper
     {
-        public Car GetDomainCar(DataAccess.Entities.Car dataAccessCar)
+        public Car GetDomainCar(DataAccess.Entities.Car car)
         {
-            throw new NotImplementedException();
+            if (car == null)
+            {
+                throw new ArgumentNullException(nameof(car));
+            }
+
+            return new Car
+            {
+                Id = car.Id,
+                ManufacturerId = car.ManufacturerId,
+                Model = car.Model,
+                Position = new Position { X = car.Position.X, Y = car.Position.Y },
+                SpeedInKmH = car.SpeedInKmH
+            };
         }
 
-        public DataAccess.Entities.Car GetDataAccessCar(Car domainCar)
+        public DataAccess.Entities.Car GetDataAccessCar(Car car)
         {
-            throw new NotImplementedException();
+            if (car == null)
+            {
+                throw new ArgumentNullException(nameof(car));
+            }
+
+            return new DataAccess.Entities.Car
+            {
+                Id = car.Id,
+                ManufacturerId = car.ManufacturerId,
+                Model = car.Model,
+                Position = new DataAccess.Entities.Position { X = car.Position.X, Y = car.Position.Y },
+                SpeedInKmH = car.SpeedInKmH
+            };
         }
     }
 }
