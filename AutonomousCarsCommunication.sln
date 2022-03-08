@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication", "AutonomousCarsCommunication\AutonomousCarsCommunication.csproj", "{9D513BD5-B794-4AED-BFC3-BC176B003E3C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.Domain", "AutonomousCarsCommunication.Domain\AutonomousCarsCommunication.Domain.csproj", "{E3ABDDE2-BE4B-4F00-B681-AE2C88995BB2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.Repositories", "AutonomousCarsCommunication.Repositories\AutonomousCarsCommunication.Repositories.csproj", "{E187E757-47C6-4F3F-8F79-547FA7054EF4}"
@@ -25,16 +23,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.Services.UnitTests", "AutonomousCarsCommunication.Services.UnitTests\AutonomousCarsCommunication.Services.UnitTests.csproj", "{4A3EA15D-3953-486F-8A76-368D58B22EBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.GUI", "AutonomousCarsCommunication.GUI\AutonomousCarsCommunication.GUI.csproj", "{02AFA7A0-CFBD-40C5-ADB5-A0C2AA150E56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9D513BD5-B794-4AED-BFC3-BC176B003E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D513BD5-B794-4AED-BFC3-BC176B003E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D513BD5-B794-4AED-BFC3-BC176B003E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D513BD5-B794-4AED-BFC3-BC176B003E3C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3ABDDE2-BE4B-4F00-B681-AE2C88995BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3ABDDE2-BE4B-4F00-B681-AE2C88995BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3ABDDE2-BE4B-4F00-B681-AE2C88995BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,6 +67,10 @@ Global
 		{4A3EA15D-3953-486F-8A76-368D58B22EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A3EA15D-3953-486F-8A76-368D58B22EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A3EA15D-3953-486F-8A76-368D58B22EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AFA7A0-CFBD-40C5-ADB5-A0C2AA150E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AFA7A0-CFBD-40C5-ADB5-A0C2AA150E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AFA7A0-CFBD-40C5-ADB5-A0C2AA150E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AFA7A0-CFBD-40C5-ADB5-A0C2AA150E56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
