@@ -24,11 +24,13 @@ namespace AutonomousCarsCommunication.GUI
             carInteractionBusinessLogic = serviceProvider.GetRequiredService<ICarInteractionBusinessLogic>();
 
             RefreshCarCollection();
+            UpdateAreaMyCar();
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             RefreshCarCollection();
+            UpdateAreaMyCar();
         }
 
         private void RefreshCarCollection()
@@ -42,6 +44,36 @@ namespace AutonomousCarsCommunication.GUI
                 var carPreviewUserControl = new CarPreviewUserControl(car);
                 carPreviewUserControl.Location = new Point(0, carPreviewUserControl.Size.Height * index);
                 panelAllCars.Controls.Add(carPreviewUserControl);
+            }
+        }
+
+        private void UpdateAreaSelectedCar()
+        {
+            labelSelectedCarManufacturer.Text = selectedCar.ManufacturerName;
+            labelSelectedCarModel.Text = selectedCar.Model;
+            labelSelectedCarSpeed.Text = $"Speed: {selectedCar.SpeedInKmH} km/h";
+            labelSelectedCarPosition.Text = $"Position: ({selectedCar.Position.X}, {selectedCar.Position.Y})";
+
+            var imageFilePath = $"CarImages\\{selectedCar.ImagePath}";
+            if (File.Exists(imageFilePath))
+            {
+                pictureBoxMyCar.BackgroundImage = Image.FromFile(imageFilePath);
+            }
+        }
+
+        private void UpdateAreaMyCar()
+        {
+            currentUserCar = carInteractionBusinessLogic.GetMyCar();
+
+            labelMyCarManufacturer.Text = currentUserCar.ManufacturerName;
+            labelMyCarModel.Text = currentUserCar.Model;
+            labelMyCarSpeed.Text = $"Speed: {currentUserCar.SpeedInKmH} km/h";
+            labelMyCarPosition.Text = $"Position: ({currentUserCar.Position.X}, {currentUserCar.Position.Y})";
+
+            var imageFilePath = $"CarImages\\{currentUserCar.ImagePath}";
+            if (File.Exists(imageFilePath))
+            {
+                pictureBoxMyCar.BackgroundImage = Image.FromFile(imageFilePath);
             }
         }
     }

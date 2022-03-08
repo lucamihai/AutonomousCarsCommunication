@@ -17,6 +17,7 @@ namespace AutonomousCarsCommunication.Repositories.Mappers
                 Id = car.Id,
                 ManufacturerName = car.ManufacturerName,
                 Model = car.Model,
+                ImagePath = car.ImagePath,
                 Position = new Position { X = car.Position.X, Y = car.Position.Y },
                 SpeedInKmH = car.SpeedInKmH
             };
@@ -34,6 +35,7 @@ namespace AutonomousCarsCommunication.Repositories.Mappers
                 Id = car.Id,
                 ManufacturerName = car.ManufacturerName,
                 Model = car.Model,
+                ImagePath = car.ImagePath,
                 Position = new DataAccess.Entities.Position { X = car.Position.X, Y = car.Position.Y },
                 SpeedInKmH = car.SpeedInKmH
             };

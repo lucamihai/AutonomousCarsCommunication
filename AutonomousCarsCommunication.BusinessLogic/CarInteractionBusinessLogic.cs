@@ -88,6 +88,7 @@ namespace AutonomousCarsCommunication.BusinessLogic
             {
                 ManufacturerName = "VW",
                 Model = "Polo",
+                ImagePath = "VW-Polo.jpg",
                 SpeedInKmH = 90,
                 Position = new Position { X = 10, Y = 10 }
             };
@@ -96,6 +97,7 @@ namespace AutonomousCarsCommunication.BusinessLogic
             {
                 ManufacturerName = "BMW",
                 Model = "E 46",
+                ImagePath = "BMW-Pan.jpeg",
                 SpeedInKmH = 230,
                 Position = new Position { X = 100, Y = 100 }
             };

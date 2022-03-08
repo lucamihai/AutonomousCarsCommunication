@@ -9,10 +9,14 @@ namespace AutonomousCarsCommunication.GUI.UserControls
         public CarPreviewUserControl(Car car)
         {
             InitializeComponent();
-
-            // TODO: Add car images
+            
             labelCarManufacturer.Text = car.ManufacturerName;
             labelCarModel.Text = car.Model;
+            var imageFilePath = $"CarImages\\{car.ImagePath}";
+            if (File.Exists(imageFilePath))
+            {
+                pictureBoxPreviewCar.BackgroundImage = Image.FromFile(imageFilePath);
+            }
         }
     }
 }

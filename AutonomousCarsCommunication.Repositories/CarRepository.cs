@@ -81,6 +81,7 @@ namespace AutonomousCarsCommunication.Repositories
 
             existingCar.ManufacturerName = car.ManufacturerName;
             existingCar.Model = car.Model;
+            existingCar.ImagePath = car.ImagePath;
             existingCar.Position = new Position { X = car.Position.X, Y = car.Position.Y };
             existingCar.SpeedInKmH = car.SpeedInKmH;
 

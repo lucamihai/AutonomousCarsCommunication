@@ -13,4 +13,17 @@
     <ProjectReference Include="..\AutonomousCarsCommunication.DI\AutonomousCarsCommunication.DI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CarImages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CarImages\BMW-Pan.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CarImages\VW-Polo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
