@@ -9,17 +9,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.Repositories", "AutonomousCarsCommunication.Repositories\AutonomousCarsCommunication.Repositories.csproj", "{E187E757-47C6-4F3F-8F79-547FA7054EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.DataAccess", "AutonomousCarsCommunication.DataAccess\AutonomousCarsCommunication.DataAccess.csproj", "{B58940E2-5A6C-4A95-8E3E-28ECE5236890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.DataAccess", "AutonomousCarsCommunication.DataAccess\AutonomousCarsCommunication.DataAccess.csproj", "{B58940E2-5A6C-4A95-8E3E-28ECE5236890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.BusinessLogic", "AutonomousCarsCommunication.BusinessLogic\AutonomousCarsCommunication.BusinessLogic.csproj", "{5A3663CD-89F5-459B-8010-CA7542CA461B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.BusinessLogic", "AutonomousCarsCommunication.BusinessLogic\AutonomousCarsCommunication.BusinessLogic.csproj", "{5A3663CD-89F5-459B-8010-CA7542CA461B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.BusinessLogic.UnitTests", "Tests\AutonomousCarsCommunication.BusinessLogic.UnitTests\AutonomousCarsCommunication.BusinessLogic.UnitTests.csproj", "{367F50AD-2992-4DF9-BD46-7BD18F6608A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.BusinessLogic.UnitTests", "Tests\AutonomousCarsCommunication.BusinessLogic.UnitTests\AutonomousCarsCommunication.BusinessLogic.UnitTests.csproj", "{367F50AD-2992-4DF9-BD46-7BD18F6608A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.Repositories.UnitTests", "Tests\AutonomousCarsCommunication.Repositories.UnitTests\AutonomousCarsCommunication.Repositories.UnitTests.csproj", "{945C64DD-F264-4789-8580-B2888BF14D8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.Repositories.UnitTests", "Tests\AutonomousCarsCommunication.Repositories.UnitTests\AutonomousCarsCommunication.Repositories.UnitTests.csproj", "{945C64DD-F264-4789-8580-B2888BF14D8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.Tests.Common", "Tests\AutonomousCarsCommunication.Tests.Common\AutonomousCarsCommunication.Tests.Common.csproj", "{8DDEFD44-13C7-4734-8B6C-6724234C9664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutonomousCarsCommunication.Tests.Common", "Tests\AutonomousCarsCommunication.Tests.Common\AutonomousCarsCommunication.Tests.Common.csproj", "{8DDEFD44-13C7-4734-8B6C-6724234C9664}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.Services", "AutonomousCarsCommunication.Services\AutonomousCarsCommunication.Services.csproj", "{AF73871B-4FC4-47F3-88A9-53006D04E448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonomousCarsCommunication.Services.UnitTests", "AutonomousCarsCommunication.Services.UnitTests\AutonomousCarsCommunication.Services.UnitTests.csproj", "{4A3EA15D-3953-486F-8A76-368D58B22EBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,14 @@ Global
 		{8DDEFD44-13C7-4734-8B6C-6724234C9664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DDEFD44-13C7-4734-8B6C-6724234C9664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DDEFD44-13C7-4734-8B6C-6724234C9664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF73871B-4FC4-47F3-88A9-53006D04E448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF73871B-4FC4-47F3-88A9-53006D04E448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF73871B-4FC4-47F3-88A9-53006D04E448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF73871B-4FC4-47F3-88A9-53006D04E448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3EA15D-3953-486F-8A76-368D58B22EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3EA15D-3953-486F-8A76-368D58B22EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3EA15D-3953-486F-8A76-368D58B22EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3EA15D-3953-486F-8A76-368D58B22EBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +79,7 @@ Global
 		{367F50AD-2992-4DF9-BD46-7BD18F6608A3} = {8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}
 		{945C64DD-F264-4789-8580-B2888BF14D8C} = {8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}
 		{8DDEFD44-13C7-4734-8B6C-6724234C9664} = {8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}
+		{4A3EA15D-3953-486F-8A76-368D58B22EBB} = {8C57F507-618B-4A30-B68A-7BD8ABD6AFB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F2181B7-D3DD-454E-8536-741E4942EDE4}

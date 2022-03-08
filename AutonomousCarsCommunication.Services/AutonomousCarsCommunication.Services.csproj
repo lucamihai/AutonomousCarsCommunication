@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\AutonomousCarsCommunication.Domain\AutonomousCarsCommunication.Domain.csproj" />
     <ProjectReference Include="..\AutonomousCarsCommunication.Repositories\AutonomousCarsCommunication.Repositories.csproj" />
-    <ProjectReference Include="..\AutonomousCarsCommunication.Services\AutonomousCarsCommunication.Services.csproj" />
   </ItemGroup>
 
 </Project>

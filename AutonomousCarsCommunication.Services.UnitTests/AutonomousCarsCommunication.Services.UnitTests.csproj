@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AutonomousCarsCommunication.BusinessLogic\AutonomousCarsCommunication.BusinessLogic.csproj" />
-    <ProjectReference Include="..\AutonomousCarsCommunication.Tests.Common\AutonomousCarsCommunication.Tests.Common.csproj" />
+    <ProjectReference Include="..\AutonomousCarsCommunication.Services\AutonomousCarsCommunication.Services.csproj" />
+    <ProjectReference Include="..\Tests\AutonomousCarsCommunication.Tests.Common\AutonomousCarsCommunication.Tests.Common.csproj" />
   </ItemGroup>
 
 </Project>

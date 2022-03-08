@@ -21,5 +21,7 @@ namespace AutonomousCarsCommunication.Tests.Common
         public const float CarPositionY1 = 3;
         public const float CarPositionX2 = 20;
         public const float CarPositionY2 = 30;
+
+        public const float DistanceBetweenCar1AndCar2 = 32.449961f;
     }
 }

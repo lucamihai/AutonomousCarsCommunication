@@ -108,7 +108,7 @@ namespace AutonomousCarsCommunication.Repositories
         }
 
         // TODO: Could extract this into a separate service
-        private void ValidateOrThrow(Car car)
+        private static void ValidateOrThrow(Car car)
         {
             if (car.ManufacturerId < 1)
             {
