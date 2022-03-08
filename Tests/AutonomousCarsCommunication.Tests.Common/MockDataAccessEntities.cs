@@ -6,6 +6,15 @@ namespace AutonomousCarsCommunication.Tests.Common
     [ExcludeFromCodeCoverage]
     public static class MockDataAccessEntities
     {
+        public static List<Car> GetCarList()
+        {
+            return new List<Car>
+            {
+                Car1,
+                Car2
+            };
+        }
+
         public static Car Car1 => new Car
         {
             Id = MockValues.CarId1,

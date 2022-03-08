@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -9,6 +9,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\AutonomousCarsCommunication.DataAccess\AutonomousCarsCommunication.DataAccess.csproj" />
     <ProjectReference Include="..\..\AutonomousCarsCommunication.Domain\AutonomousCarsCommunication.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestHelpers\" />
   </ItemGroup>
 
 </Project>

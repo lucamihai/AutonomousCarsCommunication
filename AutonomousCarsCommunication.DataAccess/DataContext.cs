@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AutonomousCarsCommunication.DataAccess
 {
-    public class DataContext : IDataContext
+    public class DataContext : DbContext, IDataContext
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Event> Events { get; set; }

@@ -7,5 +7,7 @@ namespace AutonomousCarsCommunication.DataAccess.Contracts
     {
         DbSet<Car> Cars { get; set; }
         DbSet<Event> Events { get; set; }
+
+        int SaveChanges();
     }
 }
