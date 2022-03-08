@@ -21,6 +21,7 @@ namespace AutonomousCarsCommunication.Tests.Common
             Id = MockValues.CarId1,
             ManufacturerName = MockValues.CarManufacturerName1,
             Model = MockValues.CarModel1,
+            ImagePath = MockValues.CarImagePath1,
             Position = new Position { X = MockValues.CarPositionX1, Y = MockValues.CarPositionY1 },
             SpeedInKmH = MockValues.CarSpeedInKmH1
         };
@@ -30,6 +31,7 @@ namespace AutonomousCarsCommunication.Tests.Common
             Id = MockValues.CarId2,
             ManufacturerName = MockValues.CarManufacturerName2,
             Model = MockValues.CarModel2,
+            ImagePath = MockValues.CarImagePath2,
             Position = new Position { X = MockValues.CarPositionX2, Y = MockValues.CarPositionY2 },
             SpeedInKmH = MockValues.CarSpeedInKmH2
         };
@@ -39,6 +41,7 @@ namespace AutonomousCarsCommunication.Tests.Common
             Id = MockValues.CarId3,
             ManufacturerName = MockValues.CarManufacturerName3,
             Model = MockValues.CarModel3,
+            ImagePath = MockValues.CarImagePath3,
             Position = new Position { X = MockValues.CarPositionX3, Y = MockValues.CarPositionY3 },
             SpeedInKmH = MockValues.CarSpeedInKmH3
         };

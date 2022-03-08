@@ -17,6 +17,10 @@ namespace AutonomousCarsCommunication.Tests.Common
         public const string CarModel2 = "CarModel2";
         public const string CarModel3 = "CarModel3";
 
+        public const string CarImagePath1 = "CarImagePath1";
+        public const string CarImagePath2 = "CarImagePath2";
+        public const string CarImagePath3 = "CarImagePath3";
+
         public const float CarSpeedInKmH1 = 100;
         public const float CarSpeedInKmH2 = 130;
         public const float CarSpeedInKmH3 = 131;

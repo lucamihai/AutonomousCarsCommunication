@@ -11,18 +11,15 @@ namespace AutonomousCarsCommunication.BusinessLogic
         private readonly ICarRepository carRepository;
         private readonly IEventRepository eventRepository;
         private readonly IAuthorizationService authorizationService;
-        private readonly ILocationService locationService;
 
         public CarInteractionBusinessLogic(
             ICarRepository carRepository,
             IEventRepository eventRepository,
-            IAuthorizationService authorizationService,
-            ILocationService locationService)
+            IAuthorizationService authorizationService)
         {
             this.carRepository = carRepository;
             this.eventRepository = eventRepository;
             this.authorizationService = authorizationService;
-            this.locationService = locationService;
 
             // TODO: Call responsible only for adding initial data, since in memory database is being used. In a normal scenario, this wouldn't exist.
             AddInitialData();
@@ -36,27 +33,6 @@ namespace AutonomousCarsCommunication.BusinessLogic
         public Car GetMyCar()
         {
             return authorizationService.GetCurrentUserCar();
-        }
-
-        public Car GetClosestCar()
-        {
-            var currentUserCar = authorizationService.GetCurrentUserCar();
-
-            var allCars = carRepository.GetAll();
-            var carsAndDistances = allCars
-                .Where(x => x.Id != currentUserCar.Id)
-                .Select(x => new {Car = x, Distance = locationService.GetDistanceBetweenCars(currentUserCar, x)})
-                .OrderBy(x => x.Distance)
-                .ToList();
-
-            return carsAndDistances.First().Car;
-        }
-
-        public float GetDistanceToCar(Car car)
-        {
-            var currentUserCar = authorizationService.GetCurrentUserCar();
-
-            return locationService.GetDistanceBetweenCars(currentUserCar, car);
         }
 
         public void SendMessageToCar(Car car, string message)

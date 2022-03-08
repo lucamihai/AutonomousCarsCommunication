@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using AutonomousCarsCommunication.Tests.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -25,6 +26,19 @@ namespace AutonomousCarsCommunication.Services.UnitTests
             var distance = locationService.GetDistanceBetweenCars(car1, car2);
 
             Assert.AreEqual(MockValues.DistanceBetweenCar1AndCar2, distance);
+        }
+
+        [TestMethod]
+        public void TestThatGetClosestCarReturnsExpectedCar()
+        {
+            var car = MockDomainEntities.Car1;
+            var allCars = MockDomainEntities.GetCarList();
+
+            var closestCar = locationService.GetClosestCar(car, allCars);
+
+            var allCarsExceptCurrentUserCar = allCars.Where(x => x.Id != car.Id).ToList();
+            var expectedCar = allCarsExceptCurrentUserCar.First();
+            Assert.AreEqual(expectedCar, closestCar);
         }
     }
 }

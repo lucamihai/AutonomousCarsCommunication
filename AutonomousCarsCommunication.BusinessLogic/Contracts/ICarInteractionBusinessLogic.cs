@@ -6,8 +6,6 @@ namespace AutonomousCarsCommunication.BusinessLogic.Contracts
     {
         List<Car> GetAllCars();
         Car GetMyCar();
-        Car GetClosestCar();
-        float GetDistanceToCar(Car car);
         void SendMessageToCar(Car car, string message);
         void SetCurrentSpeed(float kmH);
     }

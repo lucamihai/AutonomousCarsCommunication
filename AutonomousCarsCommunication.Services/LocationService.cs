@@ -11,5 +11,16 @@ namespace AutonomousCarsCommunication.Services
 
             return (float)Math.Sqrt(sum);
         }
+
+        public Car GetClosestCar(Car car, List<Car> cars)
+        {
+            var carsAndDistances = cars
+                .Where(x => x.Id != car.Id)
+                .Select(x => new { Car = x, Distance = GetDistanceBetweenCars(car, x) })
+                .OrderBy(x => x.Distance)
+                .ToList();
+
+            return carsAndDistances.First().Car;
+        }
     }
 }

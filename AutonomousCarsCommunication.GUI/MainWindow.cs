@@ -14,6 +14,7 @@ namespace AutonomousCarsCommunication.GUI
         private readonly ICarInteractionBusinessLogic carInteractionBusinessLogic;
         private readonly ILocationService locationService;
 
+        private List<Car> cars;
         private Dictionary<int, Car> carsById;
         private Car currentUserCar;
         private Car selectedCar;
@@ -44,13 +45,13 @@ namespace AutonomousCarsCommunication.GUI
 
         private void RefreshCarCollection()
         {
-            var allCars = carInteractionBusinessLogic.GetAllCars();
-            carsById = allCars.ToDictionary(x => x.Id);
+            cars = carInteractionBusinessLogic.GetAllCars();
+            carsById = cars.ToDictionary(x => x.Id);
 
             panelAllCars.Controls.Clear();
-            for (var index = 0; index < allCars.Count; index++)
+            for (var index = 0; index < cars.Count; index++)
             {
-                var car = allCars[index];
+                var car = cars[index];
                 var carPreviewUserControl = new CarPreviewUserControl(car, OnCarPreviewUserControlClick);
                 carPreviewUserControl.Location = new Point(0, carPreviewUserControl.Size.Height * index);
                 panelAllCars.Controls.Add(carPreviewUserControl);
@@ -107,7 +108,7 @@ namespace AutonomousCarsCommunication.GUI
 
         private void buttonSelectClosestCar_Click(object sender, EventArgs e)
         {
-            selectedCar = carInteractionBusinessLogic.GetClosestCar();
+            selectedCar = locationService.GetClosestCar(currentUserCar, cars);
             RefreshDisplayData();
         }
 

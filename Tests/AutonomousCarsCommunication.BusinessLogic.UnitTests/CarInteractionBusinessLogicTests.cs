@@ -19,7 +19,6 @@ namespace AutonomousCarsCommunication.BusinessLogic.UnitTests
         private Mock<ICarRepository> carRepositoryMock;
         private Mock<IEventRepository> eventRepositoryMock;
         private Mock<IAuthorizationService> authorizationServiceMock;
-        private Mock<ILocationService> locationServiceMock;
 
         private List<Car> allCars;
         private Car currentUserCar;
@@ -30,13 +29,11 @@ namespace AutonomousCarsCommunication.BusinessLogic.UnitTests
             carRepositoryMock = new Mock<ICarRepository>();
             eventRepositoryMock = new Mock<IEventRepository>();
             authorizationServiceMock = new Mock<IAuthorizationService>();
-            locationServiceMock = new Mock<ILocationService>();
 
             carInteractionBusinessLogic = new CarInteractionBusinessLogic(
                 carRepositoryMock.Object,
                 eventRepositoryMock.Object,
-                authorizationServiceMock.Object,
-                locationServiceMock.Object);
+                authorizationServiceMock.Object);
 
             SetupCarRepositoryMock();
             SetupAuthorizationServiceMock();
@@ -56,47 +53,6 @@ namespace AutonomousCarsCommunication.BusinessLogic.UnitTests
             carInteractionBusinessLogic.GetMyCar();
 
             authorizationServiceMock.Verify(x => x.GetCurrentUserCar(), Times.Once);
-        }
-
-        [TestMethod]
-        public void TestThatGetClosestCarMakesExpectedCalls()
-        {
-            carInteractionBusinessLogic.GetClosestCar();
-
-            var allCarsExceptCurrentUserCar = allCars.Where(x => x.Id != currentUserCar.Id).ToList();
-            authorizationServiceMock.Verify(x => x.GetCurrentUserCar(), Times.Once);
-            carRepositoryMock.Verify(x => x.GetAll(), Times.Once);
-            locationServiceMock.Verify(x => x.GetDistanceBetweenCars(currentUserCar, It.IsAny<Car>()), Times.Exactly(allCarsExceptCurrentUserCar.Count));
-            foreach (var existingCar in allCarsExceptCurrentUserCar)
-            {
-                locationServiceMock.Verify(x => x.GetDistanceBetweenCars(currentUserCar, existingCar), Times.Once);
-            }
-        }
-
-        [TestMethod]
-        public void TestThatGetClosestCarReturnsExpectedCar()
-        {
-            locationServiceMock
-                .SetupSequence(x => x.GetDistanceBetweenCars(currentUserCar, It.IsAny<Car>()))
-                .Returns(50)
-                .Returns(10);
-
-            var closestCar = carInteractionBusinessLogic.GetClosestCar();
-
-            var allCarsExceptCurrentUserCar = allCars.Where(x => x.Id != currentUserCar.Id).ToList();
-            var expectedCar = allCarsExceptCurrentUserCar.Last();
-            Assert.AreEqual(expectedCar, closestCar);
-        }
-
-        [TestMethod]
-        public void TestThatGetDistanceToCarMakesExpectedCalls()
-        {
-            var car = MockDomainEntities.Car1;
-
-            carInteractionBusinessLogic.GetDistanceToCar(car);
-
-            authorizationServiceMock.Verify(x => x.GetCurrentUserCar(), Times.Once);
-            locationServiceMock.Verify(x => x.GetDistanceBetweenCars(currentUserCar, car), Times.Once);
         }
 
         [TestMethod]
