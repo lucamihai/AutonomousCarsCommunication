@@ -126,7 +126,14 @@ namespace AutonomousCarsCommunication.GUI
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBoxMessage.Text))
+            {
+                return;
+            }
 
+            carInteractionBusinessLogic.SendMessageToCar(selectedCar, textBoxMessage.Text);
+            textBoxMessage.Text = string.Empty;
+            RefreshDisplayData();
         }
 
         private void buttonSetMyCarSpeed_Click(object sender, EventArgs e)
@@ -148,6 +155,14 @@ namespace AutonomousCarsCommunication.GUI
             }
 
             return stringBuilder.ToString();
+        }
+
+        private void textBoxMessage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSendMessage_Click(sender, e);
+            }
         }
     }
 }

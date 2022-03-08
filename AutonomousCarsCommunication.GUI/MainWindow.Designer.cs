@@ -30,6 +30,8 @@
         {
             this.panelAllCars = new System.Windows.Forms.Panel();
             this.panelSelectedCar = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxSelectedCarEvents = new System.Windows.Forms.TextBox();
             this.labelDistanceFromSelectedCarToMyCar = new System.Windows.Forms.Label();
             this.labelSelectedCarPosition = new System.Windows.Forms.Label();
             this.labelSelectedCarSpeed = new System.Windows.Forms.Label();
@@ -38,6 +40,8 @@
             this.pictureBoxSelectedCar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxMyCarEvents = new System.Windows.Forms.TextBox();
             this.labelMyCarPosition = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelMyCarSpeed = new System.Windows.Forms.Label();
@@ -52,10 +56,6 @@
             this.buttonSetMyCarSpeed = new System.Windows.Forms.Button();
             this.numericUpDownMyCarSpeed = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxSelectedCarEvents = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxMyCarEvents = new System.Windows.Forms.TextBox();
             this.panelSelectedCar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedCar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -88,6 +88,25 @@
             this.panelSelectedCar.Name = "panelSelectedCar";
             this.panelSelectedCar.Size = new System.Drawing.Size(467, 544);
             this.panelSelectedCar.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(13, 275);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 19);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Events";
+            // 
+            // textBoxSelectedCarEvents
+            // 
+            this.textBoxSelectedCarEvents.Location = new System.Drawing.Point(12, 297);
+            this.textBoxSelectedCarEvents.Multiline = true;
+            this.textBoxSelectedCarEvents.Name = "textBoxSelectedCarEvents";
+            this.textBoxSelectedCarEvents.ReadOnly = true;
+            this.textBoxSelectedCarEvents.Size = new System.Drawing.Size(440, 219);
+            this.textBoxSelectedCarEvents.TabIndex = 11;
             // 
             // labelDistanceFromSelectedCarToMyCar
             // 
@@ -175,6 +194,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 544);
             this.panel1.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(18, 275);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 19);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Events";
+            // 
+            // textBoxMyCarEvents
+            // 
+            this.textBoxMyCarEvents.Location = new System.Drawing.Point(17, 297);
+            this.textBoxMyCarEvents.Multiline = true;
+            this.textBoxMyCarEvents.Name = "textBoxMyCarEvents";
+            this.textBoxMyCarEvents.ReadOnly = true;
+            this.textBoxMyCarEvents.Size = new System.Drawing.Size(440, 219);
+            this.textBoxMyCarEvents.TabIndex = 15;
             // 
             // labelMyCarPosition
             // 
@@ -282,6 +320,7 @@
             this.textBoxMessage.Name = "textBoxMessage";
             this.textBoxMessage.Size = new System.Drawing.Size(440, 23);
             this.textBoxMessage.TabIndex = 7;
+            this.textBoxMessage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMessage_KeyUp);
             // 
             // buttonSetMyCarSpeed
             // 
@@ -320,44 +359,6 @@
             this.label4.Size = new System.Drawing.Size(39, 19);
             this.label4.TabIndex = 15;
             this.label4.Text = "km/h";
-            // 
-            // textBoxSelectedCarEvents
-            // 
-            this.textBoxSelectedCarEvents.Location = new System.Drawing.Point(12, 297);
-            this.textBoxSelectedCarEvents.Multiline = true;
-            this.textBoxSelectedCarEvents.Name = "textBoxSelectedCarEvents";
-            this.textBoxSelectedCarEvents.ReadOnly = true;
-            this.textBoxSelectedCarEvents.Size = new System.Drawing.Size(440, 219);
-            this.textBoxSelectedCarEvents.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(13, 275);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Events";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(18, 275);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 19);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Events";
-            // 
-            // textBoxMyCarEvents
-            // 
-            this.textBoxMyCarEvents.Location = new System.Drawing.Point(17, 297);
-            this.textBoxMyCarEvents.Multiline = true;
-            this.textBoxMyCarEvents.Name = "textBoxMyCarEvents";
-            this.textBoxMyCarEvents.ReadOnly = true;
-            this.textBoxMyCarEvents.Size = new System.Drawing.Size(440, 219);
-            this.textBoxMyCarEvents.TabIndex = 15;
             // 
             // MainWindow
             // 
