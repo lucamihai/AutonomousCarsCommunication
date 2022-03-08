@@ -24,13 +24,18 @@ namespace AutonomousCarsCommunication.BusinessLogic
             this.authorizationService = authorizationService;
             this.locationService = locationService;
 
-            // TODO: Call responsible only for adding initial data. In a normal scenario, this wouldn't exist.
-            AddInitialDataIfThereIsNoData();
+            // TODO: Call responsible only for adding initial data, since in memory database is being used. In a normal scenario, this wouldn't exist.
+            AddInitialData();
         }
 
         public List<Car> GetAllCars()
         {
             return carRepository.GetAll();
+        }
+
+        public Car GetMyCar()
+        {
+            return authorizationService.GetCurrentUserCar();
         }
 
         public Car GetClosestCar()
@@ -75,24 +80,7 @@ namespace AutonomousCarsCommunication.BusinessLogic
         }
 
         #region Code responsible only for adding initial data. In a normal scenario, this wouldn't exist.
-
-        [ExcludeFromCodeCoverage]
-        private void AddInitialDataIfThereIsNoData()
-        {
-            if (ThereIsNoData())
-            {
-                AddInitialData();
-            }
-        }
-
-        [ExcludeFromCodeCoverage]
-        private bool ThereIsNoData()
-        {
-            var allCars = carRepository.GetAll();
-
-            return allCars.Count == 0;
-        }
-
+        
         [ExcludeFromCodeCoverage]
         private void AddInitialData()
         {

@@ -51,6 +51,14 @@ namespace AutonomousCarsCommunication.BusinessLogic.UnitTests
         }
 
         [TestMethod]
+        public void TestThatGetMyCarCallsAuthorizationServiceGetCurrentUserCar()
+        {
+            carInteractionBusinessLogic.GetMyCar();
+
+            authorizationServiceMock.Verify(x => x.GetCurrentUserCar(), Times.Once);
+        }
+
+        [TestMethod]
         public void TestThatGetClosestCarMakesExpectedCalls()
         {
             carInteractionBusinessLogic.GetClosestCar();
