@@ -24,5 +24,26 @@ namespace AutonomousCarsCommunication.Tests.Common.TestHelpers
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            CreateCarEventModel(modelBuilder);
+        }
+
+        private static void CreateCarEventModel(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CarEvent>()
+                .HasKey(ed => new { ed.CarId, ed.EventId });
+
+            modelBuilder.Entity<CarEvent>()
+                .HasOne(ed => ed.Car)
+                .WithMany(e => e.CarEvents)
+                .HasForeignKey(ed => ed.CarId);
+
+            modelBuilder.Entity<CarEvent>()
+                .HasOne(ed => ed.Event)
+                .WithMany(e => e.CarEvents)
+                .HasForeignKey(ed => ed.EventId);
+        }
     }
 }

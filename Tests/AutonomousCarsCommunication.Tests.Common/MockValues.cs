@@ -29,5 +29,14 @@ namespace AutonomousCarsCommunication.Tests.Common
         public const float CarPositionY3 = 101;
 
         public const float DistanceBetweenCar1AndCar2 = 32.449961f;
+
+
+        public const int EventId1 = 1;
+        public const int EventId2 = 2;
+        public const int EventId3 = 3;
+
+        public const string EventDetails1 = "Car ran out of gas. Silly driver.";
+        public const string EventDetails2 = "Car's exhaust turned into a smoke grenade. Change the oil already ffs";
+        public const string EventDetails3 = "Driver tried to insert gas into their electric car. Shocking.";
     }
 }

@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MappersTests\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\AutonomousCarsCommunication.Repositories\AutonomousCarsCommunication.Repositories.csproj" />
     <ProjectReference Include="..\AutonomousCarsCommunication.Tests.Common\AutonomousCarsCommunication.Tests.Common.csproj" />
   </ItemGroup>

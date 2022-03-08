@@ -42,5 +42,37 @@ namespace AutonomousCarsCommunication.Tests.Common
             Position = new Position { X = MockValues.CarPositionX3, Y = MockValues.CarPositionY3 },
             SpeedInKmH = MockValues.CarSpeedInKmH3
         };
+
+
+        public static List<Event> GetEventList()
+        {
+            return new List<Event>
+            {
+                Event1,
+                Event2,
+                Event3
+            };
+        }
+
+        public static Event Event1 => new Event
+        {
+            Id = MockValues.EventId1,
+            Details = MockValues.EventDetails1,
+            CarEvents = new List<CarEvent> { new CarEvent { CarId = MockValues.CarId1 } }
+        };
+
+        public static Event Event2 => new Event
+        {
+            Id = MockValues.EventId2,
+            Details = MockValues.EventDetails2,
+            CarEvents = new List<CarEvent> { new CarEvent { CarId = MockValues.CarId2 } }
+        };
+
+        public static Event Event3 => new Event
+        {
+            Id = MockValues.EventId3,
+            Details = MockValues.EventDetails3,
+            CarEvents = new List<CarEvent> { new CarEvent { CarId = MockValues.CarId3 } }
+        };
     }
 }
