@@ -9,9 +9,9 @@ namespace AutonomousCarsCommunication.Tests.Common
         public const int CarId2 = 2;
         public const int CarId3 = 3;
 
-        public const int CarManufacturerId1 = 1;
-        public const int CarManufacturerId2 = 2;
-        public const int CarManufacturerId3 = 3;
+        public const string CarManufacturerName1 = "CarManufacturerName1";
+        public const string CarManufacturerName2 = "CarManufacturerName2";
+        public const string CarManufacturerName3 = "CarManufacturerName3";
 
         public const string CarModel1 = "CarModel1";
         public const string CarModel2 = "CarModel2";

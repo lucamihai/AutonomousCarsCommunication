@@ -13,7 +13,7 @@ namespace AutonomousCarsCommunication.DataAccess.Entities
 
         [Key]
         public int Id { get; set; }
-        public int ManufacturerId { get; set; }
+        public string ManufacturerName { get; set; }
         public string Model { get; set; }
 
         public float SpeedInKmH { get; set; }

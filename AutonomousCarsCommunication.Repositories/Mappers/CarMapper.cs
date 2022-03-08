@@ -15,7 +15,7 @@ namespace AutonomousCarsCommunication.Repositories.Mappers
             return new Car
             {
                 Id = car.Id,
-                ManufacturerId = car.ManufacturerId,
+                ManufacturerName = car.ManufacturerName,
                 Model = car.Model,
                 Position = new Position { X = car.Position.X, Y = car.Position.Y },
                 SpeedInKmH = car.SpeedInKmH
@@ -32,7 +32,7 @@ namespace AutonomousCarsCommunication.Repositories.Mappers
             return new DataAccess.Entities.Car
             {
                 Id = car.Id,
-                ManufacturerId = car.ManufacturerId,
+                ManufacturerName = car.ManufacturerName,
                 Model = car.Model,
                 Position = new DataAccess.Entities.Position { X = car.Position.X, Y = car.Position.Y },
                 SpeedInKmH = car.SpeedInKmH

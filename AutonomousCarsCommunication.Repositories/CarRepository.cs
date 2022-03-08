@@ -79,7 +79,7 @@ namespace AutonomousCarsCommunication.Repositories
                 throw new InvalidOperationException($"There is no car with id: {car.Id}");
             }
 
-            existingCar.ManufacturerId = car.ManufacturerId;
+            existingCar.ManufacturerName = car.ManufacturerName;
             existingCar.Model = car.Model;
             existingCar.Position = new Position { X = car.Position.X, Y = car.Position.Y };
             existingCar.SpeedInKmH = car.SpeedInKmH;
@@ -110,14 +110,14 @@ namespace AutonomousCarsCommunication.Repositories
         // TODO: Could extract this into a separate service
         private static void ValidateOrThrow(Car car)
         {
-            if (car.ManufacturerId < 1)
+            if (string.IsNullOrWhiteSpace(car.ManufacturerName))
             {
-                throw new ArgumentException("Car ManufacturerId should be at least 1");
+                throw new ArgumentException("Car ManufacturerName should not be empty");
             }
 
             if (string.IsNullOrWhiteSpace(car.Model))
             {
-                throw new ArgumentException("Car Model should be not empty");
+                throw new ArgumentException("Car Model should not be empty");
             }
 
             if (car.SpeedInKmH > 250)
