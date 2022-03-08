@@ -76,8 +76,8 @@ namespace AutonomousCarsCommunication.GUI
             labelSelectedCarModel.Text = selectedCar?.Model;
             labelSelectedCarSpeed.Text = $"Speed: {selectedCar?.SpeedInKmH} km/h";
             labelSelectedCarPosition.Text = $"Position: ({selectedCar?.Position.X}, {selectedCar?.Position.Y})";
-
-            var imageFilePath = $"CarImages\\{selectedCar?.ImagePath}";
+            
+            var imageFilePath = Path.Combine("CarImages", selectedCar?.ImagePath);
             if (File.Exists(imageFilePath))
             {
                 pictureBoxSelectedCar.BackgroundImage = Image.FromFile(imageFilePath);
@@ -100,7 +100,7 @@ namespace AutonomousCarsCommunication.GUI
             labelMyCarSpeed.Text = $"Speed: {currentUserCar.SpeedInKmH} km/h";
             labelMyCarPosition.Text = $"Position: ({currentUserCar.Position.X}, {currentUserCar.Position.Y})";
 
-            var imageFilePath = $"CarImages\\{currentUserCar.ImagePath}";
+            var imageFilePath = Path.Combine("CarImages", currentUserCar.ImagePath);
             if (File.Exists(imageFilePath))
             {
                 pictureBoxMyCar.BackgroundImage = Image.FromFile(imageFilePath);
