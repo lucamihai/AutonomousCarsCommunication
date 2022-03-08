@@ -1,4 +1,5 @@
-﻿using AutonomousCarsCommunication.BusinessLogic.Contracts;
+﻿using System.Diagnostics.CodeAnalysis;
+using AutonomousCarsCommunication.BusinessLogic.Contracts;
 using AutonomousCarsCommunication.Domain.Entities;
 using AutonomousCarsCommunication.Repositories.Contracts;
 using AutonomousCarsCommunication.Services.Contracts;
@@ -22,6 +23,9 @@ namespace AutonomousCarsCommunication.BusinessLogic
             this.eventRepository = eventRepository;
             this.authorizationService = authorizationService;
             this.locationService = locationService;
+
+            // TODO: Call responsible only for adding initial data. In a normal scenario, this wouldn't exist.
+            AddInitialDataIfThereIsNoData();
         }
 
         public List<Car> GetAllCars()
@@ -69,5 +73,50 @@ namespace AutonomousCarsCommunication.BusinessLogic
 
             carRepository.Edit(currentUserCar);
         }
+
+        #region Code responsible only for adding initial data. In a normal scenario, this wouldn't exist.
+
+        [ExcludeFromCodeCoverage]
+        private void AddInitialDataIfThereIsNoData()
+        {
+            if (ThereIsNoData())
+            {
+                AddInitialData();
+            }
+        }
+
+        [ExcludeFromCodeCoverage]
+        private bool ThereIsNoData()
+        {
+            var allCars = carRepository.GetAll();
+
+            return allCars.Count == 0;
+        }
+
+        [ExcludeFromCodeCoverage]
+        private void AddInitialData()
+        {
+            var car1 = new Car
+            {
+                ManufacturerName = "VW",
+                Model = "Polo",
+                SpeedInKmH = 90,
+                Position = new Position { X = 10, Y = 10 }
+            };
+
+            var car2 = new Car
+            {
+                ManufacturerName = "BMW",
+                Model = "E 46",
+                SpeedInKmH = 230,
+                Position = new Position { X = 100, Y = 100 }
+            };
+
+            carRepository.Add(car1);
+            carRepository.Add(car2);
+        }
+
+        #endregion
+
     }
 }

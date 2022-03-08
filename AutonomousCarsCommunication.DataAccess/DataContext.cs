@@ -11,6 +11,16 @@ namespace AutonomousCarsCommunication.DataAccess
         public DbSet<Car> Cars { get; set; }
         public DbSet<Event> Events { get; set; }
 
+        public DataContext(DbContextOptions<DataContext> dbContextOptions) : base(dbContextOptions)
+        {
+
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             CreateCarEventModel(modelBuilder);

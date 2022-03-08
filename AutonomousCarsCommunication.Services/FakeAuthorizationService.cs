@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using AutonomousCarsCommunication.Domain.Entities;
+﻿using AutonomousCarsCommunication.Domain.Entities;
 using AutonomousCarsCommunication.Repositories.Contracts;
 using AutonomousCarsCommunication.Services.Contracts;
 

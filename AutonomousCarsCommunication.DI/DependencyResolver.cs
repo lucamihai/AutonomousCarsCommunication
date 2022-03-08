@@ -9,6 +9,7 @@ using AutonomousCarsCommunication.Repositories.Contracts.Mappers;
 using AutonomousCarsCommunication.Repositories.Mappers;
 using AutonomousCarsCommunication.Services;
 using AutonomousCarsCommunication.Services.Contracts;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AutonomousCarsCommunication.DI
@@ -29,6 +30,10 @@ namespace AutonomousCarsCommunication.DI
             services.AddScoped<IEventRepository, EventRepository>();
 
             services.AddScoped<IDataContext, DataContext>();
+            services.AddDbContext<IDataContext, DataContext>((serviceProvider, options) =>
+            {
+                options.UseInMemoryDatabase("AutonomousCarsCommunication");
+            });
 
             services.AddScoped<IAuthorizationService, FakeAuthorizationService>();
             services.AddScoped<ILocationService, LocationService>();
